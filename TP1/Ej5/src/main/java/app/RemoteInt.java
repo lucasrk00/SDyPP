@@ -6,5 +6,8 @@ public interface RemoteInt extends Remote {
 	// Ej 5
 	public String getWeather() throws RemoteException;
 	// Ej 6
-	//public int[] vectorsAdd(int[] firstVector, int[] secondVector) throws RemoteException;
+	public int[] vectorsAddition(int[] firstVector, int[] secondVector) throws RemoteException;
+	public int[] vectorsSubtraction(int[] firstVector, int[] secondVector) throws RemoteException;
+	// Ej 7
+	public void runTask(Tarea tarea) throws RemoteException;
 }
