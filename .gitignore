@@ -1,0 +1,7 @@
+.vscode
+.settings
+generated-sources
+generated-test-sources
+maven-archiver
+maven-status
+surefire-reports

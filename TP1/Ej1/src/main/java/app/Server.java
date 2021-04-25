@@ -26,10 +26,4 @@ public class Server
 			e.printStackTrace();
 		}
 	}
-
-	public static void main( String[] args )
-	{
-		int port = 4000;
-		Server server = new Server(port);
-	}
 }

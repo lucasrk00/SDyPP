@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 	Socket host;
@@ -18,6 +19,8 @@ public class Client {
 
 			InputStreamReader streamReader = new InputStreamReader(this.host.getInputStream());
 			entry = new BufferedReader(streamReader);
+
+			// Chequea mensajes del host
 			Thread messageHandler = new Thread(new Runnable(){
 				@Override
 				public void run() {
@@ -35,10 +38,13 @@ public class Client {
 
 			messageHandler.start();
 
-			send("Hola me llamo Facu");
+			Scanner scanner = new Scanner(System.in);
 
-
-			
+			System.out.println("Escriba un mensaje...");
+			while (true) {
+				String line = scanner.nextLine();
+				send(line);
+			}
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
