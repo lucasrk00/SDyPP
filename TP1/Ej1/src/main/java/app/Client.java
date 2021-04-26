@@ -62,8 +62,8 @@ public class Client {
 		}
 	}
 	public static void main(String[] args) {
-		String host = args.length > 1 ? args[0] : "127.0.0.1";
-		int port = args.length > 2 ? parseInt(args[1], 4000) : 4000;
+		String host = args.length > 0 ? args[0] : "127.0.0.1";
+		int port = args.length > 1 ? parseInt(args[1], 4000) : 4000;
 		Client c = new Client(host, port);
 	}
 }
