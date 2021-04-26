@@ -53,4 +53,17 @@ public class Client {
 	public void send(String val) {
 		exit.println(val);
 	}
+
+	public static int parseInt(String num, int def) {
+		try {
+			return Integer.parseInt(num);
+		} catch (Exception e) {
+			return def;
+		}
+	}
+	public static void main(String[] args) {
+		String host = args.length > 1 ? args[0] : "127.0.0.1";
+		int port = args.length > 2 ? parseInt(args[1], 4000) : 4000;
+		Client c = new Client(host, port);
+	}
 }

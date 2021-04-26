@@ -26,4 +26,17 @@ public class Server
 			e.printStackTrace();
 		}
 	}
+
+	public static int parseInt(String num, int def) {
+		try {
+			return Integer.parseInt(num);
+		} catch (Exception e) {
+			return def;
+		}
+	}
+	
+	public static void main(String[] args) {
+		int port = args.length > 0 ? parseInt(args[0], 4000) : 4000;
+		Server s = new Server(port);
+	}
 }
