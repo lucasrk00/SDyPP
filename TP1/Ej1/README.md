@@ -17,3 +17,7 @@ docker run --network="host" -it silvafacundo/sdypp-ej1-2:client
 ```sh
 java -cp ./target/Ej1-1.0-SNAPSHOT.jar "app.Client" [host] [port]
 ```
+**Netcat:**
+```sh
+nc host port
+```
