@@ -24,7 +24,15 @@ public class Server {
 
 	public static  void main(String[] args) {
 		int port = 4000;
-		Server server = new Server(port);
+		if (args.length > 0) {
+			try {
+				port = Integer.parseInt(args[0]);
+			} catch (Exception e) {
+
+			}
+		}
+
+		Server s = new Server(port);
 	}
 
 }

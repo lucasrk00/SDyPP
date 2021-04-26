@@ -66,10 +66,18 @@ public class Client {
 		return vectorString;
 	}
 
+	public static int parseInt(String num, int def) {
+		try {
+			return Integer.parseInt(num);
+		} catch (Exception e) {
+			return def;
+		}
+	}
+
 	public static void main(String[] args) {
-		String host = "127.0.0.1";
-		int port = 4000;
-		Client client = new Client(host, port);
+		String host = args.length > 0 ? args[0] : "127.0.0.1";
+		int port = args.length > 1 ? parseInt(args[1], 4000) : 4000;
+		Client c = new Client(host, port);
 	}
 }
 
