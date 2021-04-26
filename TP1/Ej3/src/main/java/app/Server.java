@@ -36,7 +36,16 @@ public class Server {
 		return users.get(username);
 	}
 
-	public void sendMessage() {
+	public static void main(String[] args) {
+		int port = 4000;
+		if (args.length > 0) {
+			try {
+				port = Integer.parseInt(args[0]);
+			} catch (Exception e) {
 
+			}
+		}
+
+		Server s = new Server(port);
 	}
 }
